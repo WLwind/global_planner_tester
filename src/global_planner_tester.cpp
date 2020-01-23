@@ -11,7 +11,7 @@ GlobalPlannerTester::GlobalPlannerTester()
     std::string global_planner;//name of the plugin
     private_nh.param("base_global_planner", global_planner, std::string("navfn/NavfnROS"));
     pluginlib::ClassLoader<nav_core::BaseGlobalPlanner> global_planner_loader("nav_core", "nav_core::BaseGlobalPlanner");//nav_core interface
-    m_costmap2d_ros_ptr.reset(new costmap_2d::Costmap2DROS("global_costmap",m_buffer));
+    m_costmap2d_ros_ptr.reset(new costmap_2d::Costmap2DROS("global_costmap",m_tf));
     m_costmap2d_ros_ptr->pause();
     try
     {

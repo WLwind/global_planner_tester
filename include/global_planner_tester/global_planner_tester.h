@@ -2,7 +2,7 @@
 #include <ros/ros.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <tf2_ros/transform_listener.h>
+#include <tf/transform_listener.h>
 #include <nav_core/base_global_planner.h>
 
 namespace global_planner_tester
@@ -29,8 +29,7 @@ public:
      */ 
     bool testPlan(const geometry_msgs::PoseStamped& goal);
 private:
-    tf2_ros::Buffer m_buffer{ros::Duration(10)};//tf buffer for melodic
-    tf2_ros::TransformListener m_tf{m_buffer};//tf listerner
+    tf::TransformListener m_tf{ros::Duration(10)};//tf listerner
     std::unique_ptr<costmap_2d::Costmap2DROS> m_costmap2d_ros_ptr;//costmap
     geometry_msgs::PoseStamped m_last_point;//last input point or pose
     boost::shared_ptr<nav_core::BaseGlobalPlanner> m_global_planner_ptr;//global planner plugin

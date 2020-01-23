@@ -15,8 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   pluginlib
   roscpp
   rospy
-  tf2_geometry_msgs
-  tf2_ros
+  tf
 )
 
 ###################################
@@ -31,7 +30,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES global_planner_tester
-  CATKIN_DEPENDS costmap_2d geometry_msgs nav_core navfn pluginlib roscpp rospy tf2_geometry_msgs tf2_ros
+  CATKIN_DEPENDS costmap_2d geometry_msgs nav_core navfn pluginlib roscpp rospy tf
 #  DEPENDS system_lib
 )
 
