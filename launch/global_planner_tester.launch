@@ -2,8 +2,7 @@
 <launch>
     <node name="global_planner_tester" pkg="global_planner_tester" type="tester_node" output="screen">
         <rosparam file="$(find global_planner_tester)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
-        <rosparam file="$(find global_planner_tester)/param/costmap_common_params.yaml" command="load" ns="local_costmap"/>
         <rosparam file="$(find global_planner_tester)/param/global_costmap_params.yaml" command="load"/>
-        <rosparam file="$(find global_planner_tester)/param/local_costmap_params.yaml" command="load"/>
+        <param name="base_global_planner" value="navfn/NavfnROS"/>
     </node>
 </launch>

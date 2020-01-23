@@ -7,7 +7,8 @@ void ClickPointCB(const geometry_msgs::PointStamped::ConstPtr& click_point_ptr,g
     pose.header=click_point_ptr->header;
     pose.pose.position=click_point_ptr->point;
     pose.pose.orientation.z=1.0;//set a quaurnion (0,0,0,1)
-    std::cout<<"testPlan result is "<<planner_tester->testPlan(pose)<<std::endl;
+    bool result=planner_tester->testPlan(pose);
+    std::cout<<"testPlan result is "<<result<<std::endl;
     return;
 }
 
